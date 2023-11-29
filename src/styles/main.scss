@@ -1,0 +1,30 @@
+@import '@/styles/variables';
+@import url('https://fonts.googleapis.com/css2?family=Fahkwang:wght@500&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: $white-100;
+  color: $dark-600;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Fahkwang', sans-serif;
+
+}
+
+h1, h2, h3 {
+  border-bottom: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: $dark-600;
+}

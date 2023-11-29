@@ -1,10 +1,13 @@
 <script setup lang="ts">
-import AppLayout from '@/layouts/AppLayout.vue'
+import AppLayout from './layouts/AppLayout.vue';
 </script>
 
 <template>
-  <app-layout />
+  <app-layout>
+    <router-view />
+  </app-layout>
 </template>
 
-<style scoped>
+<style lang="scss">
+@import '@/styles/main';
 </style>

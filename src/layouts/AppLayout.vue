@@ -1,46 +1,26 @@
 <script setup lang="ts">
-import { shallowRef, watch } from 'vue'
-import { useRoute } from 'vue-router'
-import AppLayoutDefault from './AppLayoutDefault.vue'
-
-const route = useRoute()
-const layout = shallowRef(null)
-
-watch(
-    () => route.meta,
-    async meta => {
-        try {
-            if (meta.layout) {
-                const component = await import(`./${meta.layout}.vue`)
-                layout.value = component?.default || AppLayoutDefault
-            } else {
-                layout.value = AppLayoutDefault
-            }
-        } catch (e) {
-            console.error('Динамический шаблон не найден. Установлен шаблон по-умолчанию.', e)
-            layout.value = AppLayoutDefault
-        }
-    }
-)
-
+import AppSidebar from '@/common/components/AppSidebar.vue'
 </script>
 
 <template>
-    <component :is="layout">
+  <div class="app_layout">
+    <app-sidebar class="app-layout__sidebar" />
+    <main class="app-layout__main">
       <slot />
-    </component>
-  </template>
-  
-<style lang="scss" scoped>
+    </main>
+  </div>
+</template>
+
+<style lang="scss">
 .app_layout {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+  display: flex;
+  padding: 32px;
 }
 
-.content {
-    display: flex;
-    flex-grow: 1;
+.app-layout__sidebar {
+}
+
+.app-layout__main {
+  width: 100%;
 }
 </style>
-  
