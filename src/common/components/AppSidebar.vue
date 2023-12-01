@@ -4,7 +4,7 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-    <nav class="app-sidebar">
+    <!-- <nav class="app-sidebar">
         <ul class="app-sidebar__list">
             <li class="app-sidebar__item">
                 <router-link :to="Routes.ABOUT_ME">About me</router-link>
@@ -16,7 +16,7 @@ import { RouterLink } from 'vue-router';
                 <router-link :to="Routes.CONTACTS">Contacts</router-link>
             </li>
         </ul>
-    </nav>
+    </nav> -->
 </template>
 
 <style lang="scss">

@@ -1,15 +1,18 @@
 export const Routes = {
-    ABOUT_ME: {
-      name: 'about',
-      path: '/about',
-    },
-    PROJECTS: {
-      name: 'projects',
-      path: '/projects'
-    },
-    CONTACTS: {
-      name: 'contacts',
-      path: '/contacts'
-    }
-  };
-  
+  MAIN_PAGE: {
+    name: 'main',
+    path: '/'
+  },
+  ABOUT_ME: {
+    name: 'about',
+    path: '/about',
+  },
+  PROJECTS: {
+    name: 'projects',
+    path: '/projects'
+  },
+  CONTACTS: {
+    name: 'contacts',
+    path: '/contacts'
+  }
+};

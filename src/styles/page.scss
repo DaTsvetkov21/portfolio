@@ -1,0 +1,14 @@
+@import '@/styles/variables';
+
+.page {
+  width: 1300px;
+  padding: 32px;
+  margin: auto;
+}
+
+@media (max-width: $xl) {
+  .page {
+    width: 100%;
+    padding: 16px;
+  }
+}

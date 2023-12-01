@@ -1,10 +1,8 @@
 <script setup lang="ts">
-import AppSidebar from '@/common/components/AppSidebar.vue'
 </script>
 
 <template>
   <div class="app_layout">
-    <app-sidebar class="app-layout__sidebar" />
     <main class="app-layout__main">
       <slot />
     </main>
@@ -17,10 +15,9 @@ import AppSidebar from '@/common/components/AppSidebar.vue'
   padding: 32px;
 }
 
-.app-layout__sidebar {
-}
 
 .app-layout__main {
   width: 100%;
+  margin: auto;
 }
 </style>

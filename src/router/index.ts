@@ -1,16 +1,23 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import { Routes } from './routes'
+import { createRouter, createWebHistory } from 'vue-router';
+import { Routes } from './routes';
 import * as Vue from 'vue';
 
-import AboutMe from '@/modules/AboutMe/AboutMe.vue'
-import Projects from '@/modules/Projects/Projects.vue'
-import Contacts from '@/modules/Contacts/Contacts.vue'
+import AboutMe from '@/modules/AboutMe/AboutMe.vue';
+import Projects from '@/modules/Projects/Projects.vue';
+import Contacts from '@/modules/Contacts/Contacts.vue';
+import WelcomePage from '@/views/WelcomePage.vue';
 
 const DEFAULT_TITLE = 'D. Tsvetkov';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
+
   routes: [
+    {
+      name: Routes.MAIN_PAGE.name,
+      path: Routes.MAIN_PAGE.path,
+      component: WelcomePage,
+    },
     {
       name: Routes.ABOUT_ME.name,
       path: Routes.ABOUT_ME.path,
@@ -40,7 +47,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   Vue.nextTick(() => {
-      document.title = to.meta && to.meta.title ? String(to.meta.title) : DEFAULT_TITLE;
+    document.title = to.meta && to.meta.title ? String(to.meta.title) : DEFAULT_TITLE;
   })
 
   next();
