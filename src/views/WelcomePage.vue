@@ -4,9 +4,6 @@ import { Routes } from '@/router/routes';
 
 <template>
   <div class="welcome-page page">
-    <header class="welcome-page__header">
-      <h1>Hello! I'm Dmitry Tsvetkov. I'm a Frontend Developer</h1>
-    </header>
     <nav class="welcome-page__navigation">
       <div class="welcome-page__navigation-block" @click="$router.push(Routes.ABOUT_ME)">
         <p :to="Routes.ABOUT_ME">About me</p>
@@ -25,8 +22,13 @@ import { Routes } from '@/router/routes';
 @import '@/styles/variables';
 
 .welcome-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
   margin: auto;
 }
+
 
 .welcome-page__navigation {
   display: flex;
@@ -36,19 +38,14 @@ import { Routes } from '@/router/routes';
   gap: 32px
 }
 
-.welcome-page__header {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 150px;
-}
-
 .welcome-page__navigation-block {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 300px;
   height: 300px;
-  border: 10px solid $dark-600;
+  border: 10px solid $light-100;
+  border-radius: 24px;
   transition: border-radius 0.5s;
   font-size: 32px;
   text-transform: uppercase;
@@ -57,16 +54,25 @@ import { Routes } from '@/router/routes';
   &:hover {
     height: 300px;
     border-radius: 50%;
-    background-color: $dark-600;
-    color: $light-0;
+    background-color: $light-100;
     transition: border-radius 0.5s;
-    color: $light-0;
+    color: $dark-1000;
   }
 }
 
 @media (max-width: $xxl) {
   .welcome-page {
     flex-direction: column;
+  }
+}
+
+@keyframes move-background {
+  from {
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  to {
+    transform: translate3d(1000px, 0px, 0px);
   }
 }
 </style>
